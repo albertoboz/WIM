@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :messages
   resources :rooms
   resources :users
   get 'static_pages/index'
