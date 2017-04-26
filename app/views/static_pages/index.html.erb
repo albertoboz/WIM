@@ -7,14 +7,20 @@
       </header>
     </div>
   </div>
+  <% if user_signed_in? %>
   <div class="row">
-    <div class="col-sm-2 col-md-4"></div>
-      <div class="col-xs-6 col-sm-4 col-md-2">
-        <h2 class="registration_link"><%= link_to('Login', new_user_session_path) %></h2>
-      </div>
-      <div class="col-xs-6 col-sm-4 col-md-2">
-        <h2 class="registration_link"><%= link_to('Sign Up', new_user_registration_path) %></h2>
-      </div>
-      <div class="col-sm-2 col-md-4"></div>
+    <div><h2><%= link_to 'Chat Rooms', rooms_path %></h2></div>
   </div>
+  <% else %>
+    <div class="row">
+      <div class="col-sm-2 col-md-4"></div>
+        <div class="col-xs-6 col-sm-4 col-md-2">
+          <h2 class="registration_link"><%= link_to('Login', new_user_session_path) %></h2>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-2">
+          <h2 class="registration_link"><%= link_to('Sign Up', new_user_registration_path) %></h2>
+        </div>
+        <div class="col-sm-2 col-md-4"></div>
+    </div>
+  <% end %>
 </body>

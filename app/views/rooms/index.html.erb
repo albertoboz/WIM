@@ -1,15 +1,10 @@
-<% if signed_in? && current_user.admin? %>
-  <div class="create-room">
-    <%= link_to 'Create New room', new_room_path %>
+<body class="room-index">
+  <header>
+    <h1>Chat Rooms</h1>
+  </header>
+  <div class="row">
+    <% @rooms.each do |room| %>
+      <%= render partial: "room", locals: {room: room} %>
+    <% end %>
   </div>
-<% end %>
-<header>
-  <h1>Shop</h1>
-</header>
-<div class="row">
-<% cache(cache_key_for_rooms) do %>
-  <% @rooms.each do |room| %>
-    <%= render partial: "room", locals: {room: room} %>
-  <% end %>
-<% end %>
-</div>
+</body>
