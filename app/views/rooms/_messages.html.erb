@@ -1,4 +1,4 @@
-<!-- <div class="message-append"> -->
+<div class="message-append">
   <% @messages.each do |message| %>
   <div class="message-wrap"><%= message.user.user_name %>: <%= message.body %>
     <% if signed_in? && current_user.admin? %>
@@ -7,4 +7,4 @@
   </div>
   <div class="message-divider"></div>
   <% end %>
-<!-- </div> -->
+</div>
